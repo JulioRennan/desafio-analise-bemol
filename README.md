@@ -3,6 +3,8 @@
 ## Descrição
   Foi fornecido uma planilha xlsx, com dados **fictícios**  com a seguinte estrutura:
   
+  *A instrução completa do desafio esta em __planilhas/relatorio.xlsx__*
+  
 ### Folha 1
 num_compra|	usuario|	nome	|dados|	Filial	|data_compra|	valor_compra	|Imposto	|Informado sobre importo?
 ------------|-------|-------|------|--------|-----------|---------------|---------|------------------------|
@@ -18,6 +20,7 @@ Loja|	data_compra|	inicio	|termino	|Loja_nome	|codloja	|produto	|EAN|	quantidade
 430	|2019-07-05 |10:30:41	|2019-07-05	|2019-07-20	|Mercadinho Daskina|	4,96186E+13	|Açaí 1L|	3,29849E+12|1|	R$ 9,23	|R$ 1,58|
 430 |	2019-07-07|13:50:44	2019-07-05	|2019-07-20|	Mercadinho Daskina|4,96186E+13	|Açaí| 1L Zero|7,8949E+12|1|	R$ 5,59|	R$ 0,96|
 
+
   
   E a partir dessa informações deveria ser feito um código capaz de capturar pelo menos os seguintes dados:
 1. **Questão**
@@ -29,6 +32,31 @@ Loja|	data_compra|	inicio	|termino	|Loja_nome	|codloja	|produto	|EAN|	quantidade
     
   
 ## Libs Necessárias para executar o código:
-  1. **matplotlib:** `pip install matplotlib`
+  1. **Matplotlib:** `pip install matplotlib`
   1. **Unidecode:** `pip install Unidecode`
+  1. **Pandas:** `pip install pandas` 
   
+  
+ ## Descriçao das Classes
+ * **ControllerVededor**:
+    * **atributos**:
+        - **`self.vendedores`**: Dicionário, para armazenas os dados do vendedor como se fosse um JSON.
+        
+        - **`self.loja`**: Dicionario, para armazenas os dados da Loja como se fosse um JSON.
+        
+        - **`self.compras`**: Lista com todas as compras registradas na planilha.
+        
+      
+    * **métodos**:
+       - **`addVendedor(self,compra)`**: cria um novo nó de vendedor em `self.vendedores`
+       
+       - **`addLoja(self,compra)`**: cria um novo nó de loja em `self.loja`
+       
+       - **`melhorVendedor(self,id_v1,id_v2,loja)`**: retorna True se o vendedor do id_v1 vender mais que o do id_v2, retorna False caso contrário
+       
+       - **`gerarDicionariosVendas(self)`**: contrói os atributos fundamentais do código `self.vendedores`,`self.loja` e `self.compras`, e salva os dados de `self.vendedores` e `self.loja` em um arquivo *.json* na pasta *estrutura_dicionarios*.
+  
+ 
+ 
+
+ 
