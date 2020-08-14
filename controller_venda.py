@@ -1,8 +1,5 @@
 import pandas as pd
 import operator
-
-
-
 import json
 class Compra:
     def __init__(self,numero_compra,usuario,nome,dados,filial,data,valor,imposto,info_imposto):
@@ -12,29 +9,11 @@ class Compra:
         self.dados  = str(dados)
         self.filial = str(filial)
         self.data   = str(data)
-
         self.valor  =round(float(valor),2)
         self.imposto=  round(float(imposto),2)
         self.info_imposto = str(info_imposto)
-
     def toString(self):
         return  self.numero+"\t"+self.usario +"\t"+self.nome +"\t"+self.dados+"\t"+self.filial+"\t"+"\t"+self.data +"\t"+str(self.valor) +"\t"+str(self.info_imposto)
-
-class vendedor:
-    def __init__(self,usuario,nome):
-        self.vendedor ={
-            'user':usuario,
-            'nome':nome,
-
-        }
-        self.compras = []
-        self.usuario = usuario
-        self.nome = nome
-class loja:
-    def __init__(self,filial):
-        self.compra = []
-        self.filial = filial
-
 class ControllerVededor:
     def __init__(self):
         self.excel = pd.ExcelFile('planilhas/relatorio.xlsx')
@@ -44,7 +23,6 @@ class ControllerVededor:
         self.list_filiais = []
         self.list_compras = []
         self.gerarDicionariosVendas()
-
     def addVendedor(self, compra):
         infoVenda = {
             'filial': compra.filial,
@@ -96,9 +74,5 @@ class ControllerVededor:
             self.addVendedor(compra)
         for compra in self.list_compras:
             self.addLoja(compra)
-        open('estrutura_dicionarios/estrutura_JSON_Loja.json','w').write(json.dumps(self.loja))
-        open('estrutura_dicionarios/estrutura_JSON_Vendedores','w').write(json.dumps(self.vendedores))
-
-
-
-
+        open('estrutura_dicionarios/estruturaQ1_loja.json','w').write(json.dumps(self.loja))
+        open('estrutura_dicionarios/estruturaQ1_vendedores.json','w').write(json.dumps(self.vendedores))

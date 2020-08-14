@@ -43,8 +43,8 @@ class ControllerProduto:
         for id_produto in self.produtos:
             self.addLoja(id_produto)
 
-        open('estrutura_dicionarios/estrutura_JSON_produto.txt', 'w').write(json.dumps(self.produtos))
-        open('estrutura_dicionarios/estrutura_JSON_loja_produto.txt', 'w').write(json.dumps(self.lojas))
+        open('estrutura_dicionarios/estruturaQ2_produto.json', 'w').write(json.dumps(self.produtos))
+        open('estrutura_dicionarios/estruturaQ2_loja_produto.json', 'w').write(json.dumps(self.lojas))
     def addLoja(self,id_produto):
         for loja in self.produtos[id_produto]['lojas']:
             if(self.lojas.get(loja,False)):
@@ -63,7 +63,6 @@ class ControllerProduto:
         if(valor_p1<valor_p2):
             return True
         return False
-
     def addProduto(self,linhaProduto):
         if(self.produtos.get(linhaProduto.EAN,False)):
             self.produtos[linhaProduto.EAN]['quantidade']+=linhaProduto.quantidade
@@ -81,8 +80,7 @@ class ControllerProduto:
                 'valor_total':linhaProduto.valor_total,
                 'lojas':{linhaProduto.loja:linhaProduto.valor_total}
             }
-
-
-
-
-controller = ControllerProduto()
+    def produtoMaisVendido(self,lojaAndId):
+        mais_vendido = self.produtos[self.lojas[lojaAndId]['mais_vendido']]
+        print('Produto mais vendido nessa loja e '+'"'+mais_vendido['nome_produto']+'"')
+        return mais_vendido
