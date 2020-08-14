@@ -55,6 +55,27 @@ Loja|	data_compra|	inicio	|termino	|Loja_nome	|codloja	|produto	|EAN|	quantidade
        - **`melhorVendedor(self,id_v1,id_v2,loja)`**: retorna True se o vendedor do id_v1 vender mais que o do id_v2, retorna False caso contrário
        
        - **`gerarDicionariosVendas(self)`**: contrói os atributos fundamentais do código `self.vendedores`,`self.loja` e `self.compras`, e salva os dados de `self.vendedores` e `self.loja` em um arquivo *.json* na pasta *estrutura_dicionarios*.
+       
+ * **ControllerProduto**:
+ 
+     * **atributos**:
+     
+            - **`self.produtos`**: Dicionário, para armazenas os dados do vendedor como se fosse um JSON.
+
+            - **`self.lojas`**: Dicionario, para armazenas os dados da Loja como se fosse um JSON.
+
+
+        
+      
+      * **métodos**:
+           - **`produtoMaisVendido(self,lojaAndId)`**: retorna o produto mais vendido de uma loja, recebendo como paramentro uma `String` que conrresponde a algum nó cadastrado em `self.loja`
+           - **`addProduto(self,compra)`**: cria um novo nó de produto em `self.vendedores`
+          
+           - **`addLoja(self,linhaProduto)`**: cria um novo nó de loja em `self.loja`
+
+           - **`maisVendido(self,id_p1,id_p2,loja)`**: retorna True se o produto do id_p2 foi mais vendido que o produto do id_v2, retorna False caso contrário
+
+           - **`gerarDicionarioLoja(self)`**: contrói os atributos fundamentais do código `self.produtos`,`self.loja` e `self.lojas`, e salva os dados deles em um arquivo *.json* na pasta *estrutura_dicionarios/*.
   
  
  
