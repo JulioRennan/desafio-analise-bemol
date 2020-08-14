@@ -60,9 +60,9 @@ Loja|	data_compra|	inicio	|termino	|Loja_nome	|codloja	|produto	|EAN|	quantidade
  
      * **atributos**:
      
-            - **`self.produtos`**: Dicionário, para armazenas os dados do vendedor como se fosse um JSON.
+        - **`self.produtos`**: Dicionário, para armazenas os dados do vendedor como se fosse um JSON.
 
-            - **`self.lojas`**: Dicionario, para armazenas os dados da Loja como se fosse um JSON.
+        - **`self.lojas`**: Dicionario, para armazenas os dados da Loja como se fosse um JSON.
 
 
         
