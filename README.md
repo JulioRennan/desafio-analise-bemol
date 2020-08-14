@@ -28,3 +28,7 @@ Loja|	data_compra|	inicio	|termino	|Loja_nome	|codloja	|produto	|EAN|	quantidade
     1. Produto mais vendido
     
   
+## Libs Necessárias para executar o código:
+  1. **matplotlib:** `pip install matplotlib`
+  1. **Unidecode:** `pip install Unidecode`
+  
