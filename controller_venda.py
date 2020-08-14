@@ -20,7 +20,7 @@ class ControllerVededor:
         self.sheet_vendas = pd.read_excel(self.excel,1)
         self.vendedores={}
         self.loja = {}
-        self.list_filiais = []
+
         self.list_compras = []
         self.gerarDicionariosVendas()
     def addVendedor(self, compra):

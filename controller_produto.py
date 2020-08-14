@@ -58,6 +58,7 @@ class ControllerProduto:
                     'mais_vendido':id_produto
                 }
     def maisVendido(self,id_p1,id_p2,loja):
+
         valor_p1 = self.produtos[id_p1]['lojas'][loja]
         valor_p2 =  self.produtos[id_p2]['lojas'][loja]
         if(valor_p1<valor_p2):
